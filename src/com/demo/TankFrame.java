@@ -1,6 +1,8 @@
 package com.demo;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -20,6 +22,9 @@ public class TankFrame extends Frame {
         setTitle("Tank War");
         setVisible(true);
 
+        //添加键盘监听事件
+        addKeyListener(new MyKeyAdapter());
+
         //设置window监听事件
         addWindowListener(new WindowAdapter() {
             @Override
@@ -38,4 +43,18 @@ public class TankFrame extends Frame {
         y += 10;
     }
 
+    class MyKeyAdapter extends KeyAdapter{
+        @Override
+        public void keyPressed(KeyEvent e) {
+            System.out.println("key pressed");
+            x+=200;
+            repaint();//窗口重画，配合键盘按下，坐标的变化，可以实现坦克移动效果
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            System.out.println("key released");
+        }
+
+    }
 }

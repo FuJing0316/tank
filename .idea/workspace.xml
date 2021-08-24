@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
@@ -27,6 +28,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code/tank" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,7 +75,10 @@
       <updated>1629627823127</updated>
       <workItem from="1629627827442" duration="1227000" />
       <workItem from="1629629085398" duration="865000" />
-      <workItem from="1629631152355" duration="1669000" />
+      <workItem from="1629631152355" duration="2906000" />
+      <workItem from="1629634142518" duration="25000" />
+      <workItem from="1629717510692" duration="599000" />
+      <workItem from="1629804033991" duration="1383000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -81,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629631373960</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="把小黑块的绘制位置（坦克位置），变成变量，则每次调用paint后，坦克就可以动起来">
+      <created>1629633001664</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629633001664</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +114,22 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/tank" />
+    </ignored-roots>
     <MESSAGE value="dele 多余impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="dele 多余impl" />
+    <MESSAGE value="把小黑块的绘制位置（坦克位置），变成变量，则每次调用paint后，坦克就可以动起来" />
+    <option name="LAST_COMMIT_MESSAGE" value="把小黑块的绘制位置（坦克位置），变成变量，则每次调用paint后，坦克就可以动起来" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/demo/TankFrame.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
