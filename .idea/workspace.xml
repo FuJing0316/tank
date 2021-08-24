@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,7 +78,7 @@
       <workItem from="1629631152355" duration="2906000" />
       <workItem from="1629634142518" duration="25000" />
       <workItem from="1629717510692" duration="599000" />
-      <workItem from="1629804033991" duration="2534000" />
+      <workItem from="1629804033991" duration="3682000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
