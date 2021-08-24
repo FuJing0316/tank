@@ -38,17 +38,16 @@ public class TankFrame extends Frame {
     public void paint(Graphics g) {
         System.out.println("paint");
         //在x=200,y=200的位置画一个黑色小块宽50高50
-        g.fillRect(x, x, 50, 50);
-        x += 10;
-        y += 10;
+        g.fillRect(x, y, 50, 50);
+        x+=10;//小黑块（坦克）位置移动
     }
 
     class MyKeyAdapter extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e) {
             System.out.println("key pressed");
-            x+=200;
-            repaint();//窗口重画，配合键盘按下，坐标的变化，可以实现坦克移动效果
+//            x+=200;
+//            repaint();//窗口重画，配合键盘按下，坐标的变化，可以实现坦克移动效果
         }
 
         @Override
