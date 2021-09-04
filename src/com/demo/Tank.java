@@ -20,11 +20,14 @@ public class Tank {
     //是否移动属性:初始状态是静止的
     private boolean isMoving = false;
 
+    //按下control键，坦克要开火，则必须要持有一个frame
+    private TankFrame tf;
 
-    public Tank(int x, int y, Direction dir) {
+    public Tank(int x, int y, Direction dir,TankFrame tf) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.tf = tf;
     }
 
     //定义画坦克的方法，在tankframe.paint方法中被调用
@@ -53,6 +56,11 @@ public class Tank {
                 y += SPEED;
                 break;
         }
+    }
+
+    //当前坦克要开火，发出一个子弹，则子弹的坐标位置应和坦克的位置相同
+    public void fire() {
+        tf.bullte = new Bullte(this.x,this.y,this.dir);
     }
 
     public boolean isMoving() {

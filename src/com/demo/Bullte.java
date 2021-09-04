@@ -25,7 +25,7 @@ public class Bullte {
 
     //定义画子弹的方法，在tankframe.paint方法中被调用
     public void paint(Graphics g) {
-        g.setColor(Color.red);
+        g.setColor(Color.RED);
         g.fillOval(x, y, 20, 20);
 
         move();

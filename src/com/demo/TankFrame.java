@@ -17,7 +17,7 @@ public class TankFrame extends Frame {
     private static final int FRAME_HIGHT = 600;
 
 
-    Tank tank = new Tank(200, 200, Direction.DOWN);
+    Tank mytank = new Tank(200, 200, Direction.DOWN,this);
     Bullte bullte = new Bullte(200, 50, Direction.DOWN);
 
     public TankFrame() {
@@ -63,7 +63,7 @@ public class TankFrame extends Frame {
     //window会自动调用的方法
     @Override
     public void paint(Graphics g) {
-        tank.paint(g);
+        mytank.paint(g);
         bullte.paint(g);
     }
 
@@ -90,6 +90,9 @@ public class TankFrame extends Frame {
                     break;
                 case KeyEvent.VK_DOWN:
                     bD = true;
+                    break;
+                case KeyEvent.VK_CONTROL:
+                    mytank.fire();
                     break;
                 default:
                     break;
@@ -126,15 +129,15 @@ public class TankFrame extends Frame {
         private void setMainTankDir() {
             //按下的不是上下左右键，坦克静止
             if (!bL && !bU && !bR && !bD) {
-                tank.setMoving(false);
+                mytank.setMoving(false);
             } else {
-                tank.setMoving(true);
+                mytank.setMoving(true);
             }
 
-            if (bL) tank.setDir(Direction.LEFT);
-            if (bU) tank.setDir(Direction.UP);
-            if (bR) tank.setDir(Direction.RIGHT);
-            if (bD) tank.setDir(Direction.DOWN);
+            if (bL) mytank.setDir(Direction.LEFT);
+            if (bU) mytank.setDir(Direction.UP);
+            if (bR) mytank.setDir(Direction.RIGHT);
+            if (bD) mytank.setDir(Direction.DOWN);
         }
 
     }
