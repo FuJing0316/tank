@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ImageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/Bullte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tank.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -30,16 +31,30 @@
   <component name="ProjectId" id="1x4wlxeJUqk5CemtLisjnLosOb0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code/tank" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.demo" />
     </key>
@@ -56,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ImageTest.test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.Main" />
       <module name="tank" />
@@ -70,8 +85,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ImageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ImageTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ImageTest.test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImageTest.test" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -95,7 +131,7 @@
       <workItem from="1630407262656" duration="1513000" />
       <workItem from="1630493940632" duration="1545000" />
       <workItem from="1630667025684" duration="1202000" />
-      <workItem from="1630727279431" duration="11433000" />
+      <workItem from="1630727279431" duration="13946000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -174,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630745134384</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="消除子弹列表中的内存泄漏问题，画出一颗子弹前，先判断子弹是否存活，死掉的子弹及时从列表移除，坦克射出时，列表添加子弹">
+      <created>1630748077396</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1630748077396</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +249,7 @@
     <MESSAGE value="定义子弹类，封装属性，并在窗口画出来" />
     <MESSAGE value="处理缓冲，解决闪烁问题" />
     <MESSAGE value="按下ctrl键，坦克会fire出一颗子弹，则坦克必须持有tankframe的引用，把子弹传递给窗口画出来" />
-    <option name="LAST_COMMIT_MESSAGE" value="按下ctrl键，坦克会fire出一颗子弹，则坦克必须持有tankframe的引用，把子弹传递给窗口画出来" />
+    <MESSAGE value="消除子弹列表中的内存泄漏问题，画出一颗子弹前，先判断子弹是否存活，死掉的子弹及时从列表移除，坦克射出时，列表添加子弹" />
+    <option name="LAST_COMMIT_MESSAGE" value="消除子弹列表中的内存泄漏问题，画出一颗子弹前，先判断子弹是否存活，死掉的子弹及时从列表移除，坦克射出时，列表添加子弹" />
   </component>
 </project>
