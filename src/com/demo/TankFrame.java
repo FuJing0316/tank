@@ -16,6 +16,9 @@ public class TankFrame extends Frame {
     int x = 200;
     int y = 200;
 
+    Direction direction = Direction.DOWN;
+    private static final int SPEED = 10;
+
     public TankFrame() {
         setSize(800, 600);
         setResizable(false);//设置是否可改变窗口大小
@@ -39,7 +42,21 @@ public class TankFrame extends Frame {
         System.out.println("paint");
         //在x=200,y=200的位置画一个黑色小块宽50高50
         g.fillRect(x, y, 50, 50);
-        x += 10;//小黑块（坦克）位置移动
+
+        switch (direction) {
+            case LEFT:
+                x -= SPEED;
+                break;
+            case UP:
+                y -= SPEED;
+                break;
+            case RIGHT:
+                x += SPEED;
+                break;
+            case DOWN:
+                y += SPEED;
+                break;
+        }
     }
 
     class MyKeyAdapter extends KeyAdapter {
@@ -69,6 +86,8 @@ public class TankFrame extends Frame {
                 default:
                     break;
             }
+
+            setMainTankDir();
         }
 
         @Override
@@ -91,6 +110,16 @@ public class TankFrame extends Frame {
                 default:
                     break;
             }
+
+            setMainTankDir();
+        }
+
+        //设置主坦克的方向
+        private void setMainTankDir() {
+            if (bL) direction = Direction.LEFT;
+            if (bU) direction = Direction.UP;
+            if (bR) direction = Direction.RIGHT;
+            if (bD) direction = Direction.DOWN;
         }
 
     }
