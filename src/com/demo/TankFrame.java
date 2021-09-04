@@ -15,6 +15,7 @@ import java.awt.event.WindowEvent;
 public class TankFrame extends Frame {
 
     Tank tank = new Tank(200, 200, Direction.DOWN);
+    Bullte bullte = new Bullte(200,50,Direction.DOWN);
 
     public TankFrame() {
         setSize(800, 600);
@@ -38,6 +39,7 @@ public class TankFrame extends Frame {
     @Override
     public void paint(Graphics g) {
         tank.paint(g);
+        bullte.paint(g);
     }
 
     class MyKeyAdapter extends KeyAdapter {
