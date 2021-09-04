@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +94,7 @@
       <workItem from="1630407262656" duration="1513000" />
       <workItem from="1630493940632" duration="1545000" />
       <workItem from="1630667025684" duration="1202000" />
-      <workItem from="1630727279431" duration="5372000" />
+      <workItem from="1630727279431" duration="7787000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630731820091</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="定义子弹类，封装属性，并在窗口画出来">
+      <created>1630732713824</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1630732713824</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +181,7 @@
     <MESSAGE value="1、添加键盘处理，根据上下左右的按键状态，判定坦克的移动方向；&#10;2、定义坦克方向enum,根据按键状态设置坦克方向，根据坦克方向确定坦克位移变化（速度变化）" />
     <MESSAGE value="抽象出了坦克类，封账对应的属性，在tankeframe中直接调用" />
     <MESSAGE value="添加坦克的静止属性，当按键不是上下左右键时，坦克设置为静止状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加坦克的静止属性，当按键不是上下左右键时，坦克设置为静止状态" />
+    <MESSAGE value="定义子弹类，封装属性，并在窗口画出来" />
+    <option name="LAST_COMMIT_MESSAGE" value="定义子弹类，封装属性，并在窗口画出来" />
   </component>
 </project>

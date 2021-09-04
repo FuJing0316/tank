@@ -29,6 +29,7 @@ public class Tank {
 
     //定义画坦克的方法，在tankframe.paint方法中被调用
     public void paint(Graphics g) {
+        g.setColor(Color.YELLOW);
         //在x,y坐标位置画一个黑色小块（坦克），宽50高50
         g.fillRect(x, y, 50, 50);
 

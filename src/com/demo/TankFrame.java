@@ -13,12 +13,15 @@ import java.awt.event.WindowEvent;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
+    private static final int FRAME_WIDTH = 800;
+    private static final int FRAME_HIGHT = 600;
+
 
     Tank tank = new Tank(200, 200, Direction.DOWN);
-    Bullte bullte = new Bullte(200,50,Direction.DOWN);
+    Bullte bullte = new Bullte(200, 50, Direction.DOWN);
 
     public TankFrame() {
-        setSize(800, 600);
+        setSize(FRAME_WIDTH, FRAME_HIGHT);
         setResizable(false);//设置是否可改变窗口大小
         setTitle("Tank War");
         setVisible(true);
@@ -33,6 +36,28 @@ public class TankFrame extends Frame {
                 System.exit(0);
             }
         });
+    }
+
+    /**
+     * 处理缓冲，解决闪烁问题
+     */
+    Image offScreenImage = null;
+    @Override
+    public void update(Graphics g) {
+        if (offScreenImage == null) {
+            offScreenImage = this.createImage(FRAME_WIDTH, FRAME_HIGHT);
+        }
+
+        Graphics gOffscreen = offScreenImage.getGraphics();
+        Color color = gOffscreen.getColor();
+        gOffscreen.setColor(Color.BLACK);
+        gOffscreen.fillRect(0, 0, FRAME_WIDTH, FRAME_HIGHT);
+        gOffscreen.setColor(color);
+
+        paint(gOffscreen);
+        g.drawImage(offScreenImage, 0, 0, null);
+
+
     }
 
     //window会自动调用的方法
@@ -100,9 +125,9 @@ public class TankFrame extends Frame {
         //根据按键方向，设置坦克位移方向
         private void setMainTankDir() {
             //按下的不是上下左右键，坦克静止
-            if (!bL && !bU && !bR && !bD){
+            if (!bL && !bU && !bR && !bD) {
                 tank.setMoving(false);
-            }else {
+            } else {
                 tank.setMoving(true);
             }
 
