@@ -20,7 +20,7 @@ public class Tank {
     //是否移动属性:初始状态是静止的
     private boolean isMoving = false;
 
-    //按下control键，坦克要开火，则必须要持有一个frame
+    //按下control键，坦克要开火，则必须要持有一个TankFrame引用，通过tankframe把坦克射击的子弹传递给窗口，画出来
     private TankFrame tf;
 
     public Tank(int x, int y, Direction dir,TankFrame tf) {
