@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame$MyKeyAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +29,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code/tank" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -87,7 +87,7 @@
       <workItem from="1630407262656" duration="1513000" />
       <workItem from="1630493940632" duration="1545000" />
       <workItem from="1630667025684" duration="1202000" />
-      <workItem from="1630727279431" duration="3449000" />
+      <workItem from="1630727279431" duration="4458000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630729048888</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="抽象出了坦克类，封账对应的属性，在tankeframe中直接调用">
+      <created>1630730940391</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630730940391</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +158,7 @@
     <MESSAGE value="把小黑块的绘制位置（坦克位置），变成变量，则每次调用paint后，坦克就可以动起来" />
     <MESSAGE value="添加键盘监听事件，调用repaint方法实现窗口重画，配合键盘按下，坐标的变化，可以实现坦克移动效果" />
     <MESSAGE value="1、添加键盘处理，根据上下左右的按键状态，判定坦克的移动方向；&#10;2、定义坦克方向enum,根据按键状态设置坦克方向，根据坦克方向确定坦克位移变化（速度变化）" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、添加键盘处理，根据上下左右的按键状态，判定坦克的移动方向；&#10;2、定义坦克方向enum,根据按键状态设置坦克方向，根据坦克方向确定坦克位移变化（速度变化）" />
+    <MESSAGE value="抽象出了坦克类，封账对应的属性，在tankeframe中直接调用" />
+    <option name="LAST_COMMIT_MESSAGE" value="抽象出了坦克类，封账对应的属性，在tankeframe中直接调用" />
   </component>
 </project>

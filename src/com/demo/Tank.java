@@ -17,6 +17,9 @@ public class Tank {
     Direction dir;
     //每一次按键的位移大小（也就是速度）
     private static final int SPEED = 10;
+    //是否移动属性:初始状态是静止的
+    private boolean isMoving = false;
+
 
     public Tank(int x, int y, Direction dir) {
         this.x = x;
@@ -24,11 +27,16 @@ public class Tank {
         this.dir = dir;
     }
 
-    //画出一个坦克的方法
+    //定义画坦克的方法，在tankframe.paint方法中被调用
     public void paint(Graphics g) {
-        System.out.println("paint");
         //在x,y坐标位置画一个黑色小块（坦克），宽50高50
         g.fillRect(x, y, 50, 50);
+
+        move();
+    }
+
+    private void move() {
+        if (!isMoving) return;
 
         switch (dir) {
             case LEFT:
@@ -44,6 +52,14 @@ public class Tank {
                 y += SPEED;
                 break;
         }
+    }
+
+    public boolean isMoving() {
+        return isMoving;
+    }
+
+    public void setMoving(boolean moving) {
+        isMoving = moving;
     }
 
     public int getX() {
