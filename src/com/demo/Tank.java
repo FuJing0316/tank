@@ -60,7 +60,7 @@ public class Tank {
 
     //当前坦克要开火，发出一个子弹，则子弹的坐标位置应和坦克的位置相同
     public void fire() {
-        tf.bullte = new Bullte(this.x,this.y,this.dir);
+        tf.bulltes.add(new Bullte(this.x, this.y, this.dir, tf));
     }
 
     public boolean isMoving() {

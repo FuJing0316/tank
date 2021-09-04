@@ -5,6 +5,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: fujing
@@ -13,12 +15,11 @@ import java.awt.event.WindowEvent;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
-    private static final int FRAME_WIDTH = 800;
-    private static final int FRAME_HIGHT = 600;
-
+    public final  int FRAME_WIDTH = 800;
+    public  final int FRAME_HIGHT = 600;
 
     Tank mytank = new Tank(200, 200, Direction.DOWN,this);
-    Bullte bullte = new Bullte(200, 50, Direction.DOWN);
+    public List<Bullte> bulltes = new ArrayList<>();
 
     public TankFrame() {
         setSize(FRAME_WIDTH, FRAME_HIGHT);
@@ -56,15 +57,22 @@ public class TankFrame extends Frame {
 
         paint(gOffscreen);
         g.drawImage(offScreenImage, 0, 0, null);
-
-
     }
 
     //window会自动调用的方法
     @Override
     public void paint(Graphics g) {
-        mytank.paint(g);
-        bullte.paint(g);
+        Color color = g.getColor();
+        g.setColor(Color.WHITE);
+        g.drawString("子弹的数量："+bulltes.size(),60,60);
+        g.setColor(color);
+
+        mytank.paint(g);//窗口画出的坦克
+
+        //画出子弹：此处注意内存泄漏
+        for (int i = 0; i < bulltes.size(); i++) {
+            bulltes.get(i).paint(g);
+        }
     }
 
     class MyKeyAdapter extends KeyAdapter {

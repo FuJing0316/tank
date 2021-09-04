@@ -15,16 +15,25 @@ public class Bullte {
     //位移大小（也就是移动速度）
     private static final int SPEED = 10;
 
+    private TankFrame tf;
+    private  static boolean isLive = true;
 
 
-    public Bullte(int x, int y, Direction dir) {
+    public Bullte(int x, int y, Direction dir,TankFrame tf) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.tf = tf;
     }
 
-    //定义画子弹的方法，在tankframe.paint方法中被调用
+    /**
+     * 定义子弹画法，在tankframe.paint方法中被调用
+     * @param g
+     */
     public void paint(Graphics g) {
+        if (!isLive){
+            tf.bulltes.remove(this);
+        }
         g.setColor(Color.RED);
         g.fillOval(x, y, 20, 20);
 
@@ -45,6 +54,11 @@ public class Bullte {
             case DOWN:
                 y += SPEED;
                 break;
+        }
+
+        //判断子弹是否存活，已经死掉的子弹，要及时清理调，否则会内存溢出
+        if (x < 0 || y < 0 || x > tf.FRAME_WIDTH || y > tf.FRAME_HIGHT) {
+            isLive = false;
         }
     }
 
