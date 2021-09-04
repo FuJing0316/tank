@@ -13,11 +13,8 @@ import java.awt.event.WindowEvent;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
-    int x = 200;
-    int y = 200;
 
-    Direction direction = Direction.DOWN;
-    private static final int SPEED = 10;
+    Tank tank = new Tank(200, 200, Direction.DOWN);
 
     public TankFrame() {
         setSize(800, 600);
@@ -37,26 +34,10 @@ public class TankFrame extends Frame {
         });
     }
 
+    //window会自动调用的方法
     @Override
     public void paint(Graphics g) {
-        System.out.println("paint");
-        //在x=200,y=200的位置画一个黑色小块宽50高50
-        g.fillRect(x, y, 50, 50);
-
-        switch (direction) {
-            case LEFT:
-                x -= SPEED;
-                break;
-            case UP:
-                y -= SPEED;
-                break;
-            case RIGHT:
-                x += SPEED;
-                break;
-            case DOWN:
-                y += SPEED;
-                break;
-        }
+        tank.paint(g);
     }
 
     class MyKeyAdapter extends KeyAdapter {
@@ -114,12 +95,12 @@ public class TankFrame extends Frame {
             setMainTankDir();
         }
 
-        //设置主坦克的方向
+        //根据按键方向，设置坦克方向
         private void setMainTankDir() {
-            if (bL) direction = Direction.LEFT;
-            if (bU) direction = Direction.UP;
-            if (bR) direction = Direction.RIGHT;
-            if (bD) direction = Direction.DOWN;
+            if (bL) tank.setDir(Direction.LEFT);
+            if (bU) tank.setDir(Direction.UP);
+            if (bR) tank.setDir(Direction.RIGHT);
+            if (bD) tank.setDir(Direction.DOWN);
         }
 
     }
