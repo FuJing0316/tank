@@ -18,8 +18,9 @@ public class TankFrame extends Frame {
     public final  int FRAME_WIDTH = 800;
     public  final int FRAME_HIGHT = 600;
 
-    Tank mytank = new Tank(200, 200, Direction.DOWN,this);
-    public List<Bullte> bulltes = new ArrayList<>();
+    Tank mytank = new Tank(300, 200, Direction.DOWN,this);
+    public List<Bullte> bulltes = new ArrayList<>();//子弹列表
+    public List<Tank> tanks = new ArrayList<>();//坦克列表
 
     public TankFrame() {
         setSize(FRAME_WIDTH, FRAME_HIGHT);
@@ -67,11 +68,15 @@ public class TankFrame extends Frame {
         g.drawString("子弹的数量："+bulltes.size(),60,60);
         g.setColor(color);
 
-        mytank.paint(g);//窗口画出的坦克
+        mytank.paint(g);//主坦克
 
         //画出子弹：此处注意内存泄漏
         for (int i = 0; i < bulltes.size(); i++) {
             bulltes.get(i).paint(g);
+        }
+        //敌人坦克
+        for (int i = 0;i<tanks.size();i++){
+            tanks.get(i).paint(g);
         }
     }
 
