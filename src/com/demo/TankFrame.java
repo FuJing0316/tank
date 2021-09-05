@@ -133,7 +133,9 @@ public class TankFrame extends Frame {
             setMainTankDir();
         }
 
-        //根据按键方向，设置坦克位移方向
+        /**
+         * 根据按键方向，设置坦克位移方向
+         */
         private void setMainTankDir() {
             //按下的不是上下左右键，坦克静止
             if (!bL && !bU && !bR && !bD) {

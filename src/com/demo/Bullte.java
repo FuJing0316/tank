@@ -1,6 +1,7 @@
 package com.demo;
 
 import java.awt.*;
+import java.text.BreakIterator;
 
 /**
  * @Author: fujing
@@ -34,8 +35,24 @@ public class Bullte {
         if (!isLive){
             tf.bulltes.remove(this);
         }
-        g.setColor(Color.RED);
-        g.fillOval(x, y, 20, 20);
+/*        g.setColor(Color.RED);
+        g.fillOval(x, y, 20, 20);*/
+        switch (dir) {
+            case LEFT:
+                g.drawImage(ResourceMgr.bulletL, x, y, null);
+                break;
+            case UP:
+                g.drawImage(ResourceMgr.bulletU, x, y, null);
+                break;
+            case RIGHT:
+                g.drawImage(ResourceMgr.bulletR, x, y, null);
+                break;
+            case DOWN:
+                g.drawImage(ResourceMgr.bulletD, x, y, null);
+                break;
+            default:
+                break;
+        }
 
         move();
     }
