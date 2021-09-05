@@ -15,10 +15,10 @@ import java.util.List;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
-    public final  int FRAME_WIDTH = 800;
-    public  final int FRAME_HIGHT = 600;
+    public final int FRAME_WIDTH = 800;
+    public final int FRAME_HIGHT = 600;
 
-    Tank mytank = new Tank(300, 200, Direction.DOWN,this);
+    Tank mytank = new Tank(300, 200, Direction.DOWN, this);
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表
     public List<Tank> tanks = new ArrayList<>();//坦克列表
 
@@ -44,6 +44,7 @@ public class TankFrame extends Frame {
      * 处理缓冲，解决闪烁问题
      */
     Image offScreenImage = null;
+
     @Override
     public void update(Graphics g) {
         if (offScreenImage == null) {
@@ -65,7 +66,8 @@ public class TankFrame extends Frame {
     public void paint(Graphics g) {
         Color color = g.getColor();
         g.setColor(Color.WHITE);
-        g.drawString("子弹的数量："+bulltes.size(),60,60);
+        g.drawString("子弹的数量：" + bulltes.size(), 60, 60);
+        g.drawString("敌人的数量：" + tanks.size(), 60, 80);
         g.setColor(color);
 
         mytank.paint(g);//主坦克
@@ -75,8 +77,15 @@ public class TankFrame extends Frame {
             bulltes.get(i).paint(g);
         }
         //敌人坦克
-        for (int i = 0;i<tanks.size();i++){
+        for (int i = 0; i < tanks.size(); i++) {
             tanks.get(i).paint(g);
+        }
+
+        //检测子弹是否击中坦克:每颗子弹每一辆坦克都检查
+        for (int i = 0; i < bulltes.size(); i++) {
+            for (int j = 0; j < tanks.size(); j++) {
+                bulltes.get(i).collectDieWith(tanks.get(j));
+            }
         }
     }
 

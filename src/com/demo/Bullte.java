@@ -1,7 +1,6 @@
 package com.demo;
 
 import java.awt.*;
-import java.text.BreakIterator;
 
 /**
  * @Author: fujing
@@ -10,15 +9,16 @@ import java.text.BreakIterator;
  * @Version: 1.0
  */
 public class Bullte {
-    private int x;
-    private int y;
+    private int x,y;
     Direction dir;
     //位移大小（也就是移动速度）
     private static final int SPEED = 10;
 
     private TankFrame tf;
-    private  static boolean isLive = true;
+    private  static boolean living = true;
 
+    private static  final int BULLET_WIDTH = ResourceMgr.bulletD.getWidth();
+    private static  final int BULLET_HEIGHT = ResourceMgr.bulletD.getHeight();
 
     public Bullte(int x, int y, Direction dir,TankFrame tf) {
         this.x = x;
@@ -35,7 +35,7 @@ public class Bullte {
      * @param g
      */
     public void paint(Graphics g) {
-        if (!isLive){
+        if (!living){
             tf.bulltes.remove(this);
         }
 
@@ -77,8 +77,26 @@ public class Bullte {
 
         //判断子弹是否存活，已经死掉的子弹，要及时清理调，否则会内存溢出
         if (x < 0 || y < 0 || x > tf.FRAME_WIDTH || y > tf.FRAME_HIGHT) {
-            isLive = false;
+            living = false;
         }
+    }
+
+    /**
+     * 检测子弹与坦克之间的碰撞
+     * 有碰撞则：子弹死坦克死
+     */
+    public void collectDieWith(Tank tank){
+        Rectangle rectangle1 = new Rectangle(this.x,this.y,BULLET_WIDTH,BULLET_HEIGHT);
+        Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(),Tank.TANK_WIDTH,Tank.TANK_HEIGHT);
+        //检测子弹和坦克之间的碰撞(交集)
+        if (rectangle1.intersects(rectangle2)){
+            tank.die();
+            this.die();
+        }
+    }
+
+    private void die() {
+        living = false;
     }
 
     public int getX() {

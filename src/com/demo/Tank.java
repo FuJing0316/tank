@@ -9,19 +9,23 @@ import java.awt.*;
  * @Version: 1.0
  */
 public class Tank {
-    //坦克位置坐标x
-    private int x;
-    //坦克位置坐标y
-    private int y;
+    //坦克位置坐标
+    private int x,y;
     //移动方向
     Direction dir;
     //每一次按键的位移大小（也就是速度）
-    private static final int SPEED = 1;
+    private static final int SPEED = 5;
     //是否移动属性:初始状态是静止的
     private boolean isMoving = false;
 
     //按下control键，坦克要开火，则必须要持有一个TankFrame引用，通过tankframe把坦克射击的子弹传递给窗口，画出来
     private TankFrame tf;
+
+    //是否被消灭
+    private boolean living = true;
+
+    public static int TANK_WIDTH = ResourceMgr.tankD.getWidth();
+    public static int TANK_HEIGHT = ResourceMgr.tankD.getHeight();
 
     public Tank(int x, int y, Direction dir, TankFrame tf) {
         this.x = x;
@@ -30,11 +34,15 @@ public class Tank {
         this.tf = tf;
     }
 
-    //定义画坦克的方法，在tankframe.paint方法中被调用
+    /**
+     * 绘制坦克的方法，在tf.paint中调用
+     * 1、如果坦克被子弹击中，则坦克死,则在窗体坦克列表中药被移除
+     * @param g
+     */
     public void paint(Graphics g) {
-/*        g.setColor(Color.YELLOW);
-        //在x,y坐标位置画一个黑色小块（坦克），宽50高50
-        g.fillRect(x, y, 50, 50);*/
+        if (!living){
+            tf.tanks.remove(this);
+        }
 
         //坦克使用resourceMgr加载的图片
         switch (dir) {
@@ -119,4 +127,7 @@ public class Tank {
     }
 
 
+    public void die() {
+        living = false;
+    }
 }
