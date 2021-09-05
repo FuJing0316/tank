@@ -29,14 +29,16 @@ public class Bullte {
 
     /**
      * 定义子弹画法，在tankframe.paint方法中被调用
+     * 1、判定子弹是否存活，未存活的子弹，从子弹列表移除
+     * 2、子弹由磁盘图片加载
+     * 3、设置子弹移动速度、是否存活属性
      * @param g
      */
     public void paint(Graphics g) {
         if (!isLive){
             tf.bulltes.remove(this);
         }
-/*        g.setColor(Color.RED);
-        g.fillOval(x, y, 20, 20);*/
+
         switch (dir) {
             case LEFT:
                 g.drawImage(ResourceMgr.bulletL, x, y, null);
