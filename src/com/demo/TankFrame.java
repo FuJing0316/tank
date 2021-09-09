@@ -15,8 +15,8 @@ import java.util.List;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
-    public final int FRAME_WIDTH = 800;
-    public final int FRAME_HIGHT = 600;
+    public static final int FRAME_WIDTH = 1080;
+    public static final int FRAME_HIGHT = 960;
 
     Tank mytank = new Tank(300, 200, Direction.DOWN, this);
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表

@@ -12,10 +12,10 @@ public class Bullte {
     private int x,y;
     Direction dir;
     //位移大小（也就是移动速度）
-    private static final int SPEED = 10;
+    private static final int SPEED = 6;
 
     private TankFrame tf;
-    private  static boolean living = true;
+    private boolean living = true;
 
     private static  final int BULLET_WIDTH = ResourceMgr.bulletD.getWidth();
     private static  final int BULLET_HEIGHT = ResourceMgr.bulletD.getHeight();
@@ -76,7 +76,7 @@ public class Bullte {
         }
 
         //判断子弹是否存活，已经死掉的子弹，要及时清理调，否则会内存溢出
-        if (x < 0 || y < 0 || x > tf.FRAME_WIDTH || y > tf.FRAME_HIGHT) {
+        if (x < 0 || y < 0 || x > TankFrame.FRAME_WIDTH || y > TankFrame.FRAME_HIGHT) {
             living = false;
         }
     }

@@ -14,7 +14,7 @@ public class Tank {
     //移动方向
     Direction dir;
     //每一次按键的位移大小（也就是速度）
-    private static final int SPEED = 5;
+    private static final int SPEED = 2;
     //是否移动属性:初始状态是静止的
     private boolean isMoving = false;
 
