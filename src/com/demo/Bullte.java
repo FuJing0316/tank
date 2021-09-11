@@ -9,7 +9,7 @@ import java.awt.*;
  * @Version: 1.0
  */
 public class Bullte {
-    private int x,y;
+    private int x, y;
     Direction dir;
     //位移大小（也就是移动速度）
     private static final int SPEED = 6;
@@ -17,12 +17,12 @@ public class Bullte {
     private TankFrame tf;
     private boolean living = true;
 
-    private static  final int BULLET_WIDTH = ResourceMgr.bulletD.getWidth();
-    private static  final int BULLET_HEIGHT = ResourceMgr.bulletD.getHeight();
+    private static final int BULLET_WIDTH = ResourceMgr.bulletD.getWidth();
+    private static final int BULLET_HEIGHT = ResourceMgr.bulletD.getHeight();
 
     private Group group = Group.BAD;
 
-    public Bullte(int x, int y, Direction dir,TankFrame tf,Group group) {
+    public Bullte(int x, int y, Direction dir, TankFrame tf, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -35,10 +35,11 @@ public class Bullte {
      * 1、判定子弹是否存活，未存活的子弹，从子弹列表移除
      * 2、子弹由磁盘图片加载
      * 3、设置子弹移动速度、是否存活属性
+     *
      * @param g
      */
     public void paint(Graphics g) {
-        if (!living){
+        if (!living) {
             tf.bulltes.remove(this);
         }
 
@@ -88,12 +89,12 @@ public class Bullte {
      * 检测子弹与坦克之间的碰撞(子弹是否打中坦克)
      * 有碰撞则：子弹死坦克死
      */
-    public void collectDieWith(Tank tank){
-        if (this.group == tank.getGroup())return;
-        Rectangle rectangle1 = new Rectangle(this.x,this.y,BULLET_WIDTH,BULLET_HEIGHT);
-        Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(),Tank.TANK_WIDTH,Tank.TANK_HEIGHT);
+    public void collectDieWith(Tank tank) {
+        if (this.group == tank.getGroup()) return;
+        Rectangle rectangle1 = new Rectangle(this.x, this.y, BULLET_WIDTH, BULLET_HEIGHT);
+        Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), Tank.TANK_WIDTH, Tank.TANK_HEIGHT);
         //检测子弹和坦克之间的碰撞(交集)
-        if (rectangle1.intersects(rectangle2)){
+        if (rectangle1.intersects(rectangle2)) {
             tank.die();
             this.die();
         }

@@ -11,16 +11,17 @@ import java.util.List;
 /**
  * @Author: fujing
  * @Date: 2021/8/22
- * @Description:  游戏主界面
+ * @Description: 游戏主界面
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
     public static final int FRAME_WIDTH = 1080;
     public static final int FRAME_HIGHT = 960;
 
-    Tank mytank = new Tank(200, 400, Direction.UP, this,Group.GOOD);//主坦克
+    Tank mytank = new Tank(200, 400, Direction.UP, this, Group.GOOD);//主坦克
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表
     public List<Tank> enemies = new ArrayList<>();//敌人坦克列表
+    public Explod explod = new Explod(90, 100, this);
 
     public TankFrame() {
         setSize(FRAME_WIDTH, FRAME_HIGHT);
@@ -87,6 +88,10 @@ public class TankFrame extends Frame {
                 bulltes.get(i).collectDieWith(enemies.get(j));
             }
         }
+
+        //指定位置产生一次爆炸效果
+        explod.paint(g);
+
     }
 
     class MyKeyAdapter extends KeyAdapter {
