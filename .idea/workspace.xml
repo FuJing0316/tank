@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="修复bug：子弹射出游戏窗口后，无法再射子弹问题">
+    <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/demo/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/TankFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Bullte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +22,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -274,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631188745434</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="删除之前练习加的备注">
+      <created>1631349355827</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1631349355827</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +328,7 @@
     <MESSAGE value="new出5架敌人坦克" />
     <MESSAGE value="检测子弹和坦克之间的碰撞（每颗子弹每辆坦克都检查），如果有碰撞，坦克死子弹死" />
     <MESSAGE value="修复bug：子弹射出游戏窗口后，无法再射子弹问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复bug：子弹射出游戏窗口后，无法再射子弹问题" />
+    <MESSAGE value="删除之前练习加的备注" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除之前练习加的备注" />
   </component>
 </project>

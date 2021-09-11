@@ -1,6 +1,7 @@
 package com.demo;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  * @Author: fujing
@@ -15,23 +16,29 @@ public class Tank {
     Direction dir;
     //坦克移动速度（每次按键位移）
     private static final int SPEED = 2;
-    //是否移动属性:初始状态是静止的
-    private boolean moving = false;
+    //静止/移动
+    private boolean moving = true;
 
     //按下control键，坦克要开火，则必须要持有一个TankFrame引用，通过tankframe把坦克射击的子弹传递给窗口，画出来
     private TankFrame tf;
 
     //是否被消灭
     private boolean living = true;
+    //所在队伍：敌我方区分
+    private Group group = Group.BAD;
 
     public static int TANK_WIDTH = ResourceMgr.tankD.getWidth();
     public static int TANK_HEIGHT = ResourceMgr.tankD.getHeight();
 
-    public Tank(int x, int y, Direction dir, TankFrame tf) {
+    private Random random = new Random();
+
+
+    public Tank(int x, int y, Direction dir, TankFrame tf,Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tf = tf;
+        this.group = group;
     }
 
     /**
@@ -82,6 +89,10 @@ public class Tank {
                 y += SPEED;
                 break;
         }
+
+        if (random.nextInt(10) > 8) {
+            this.fire();
+        }
     }
 
     /**
@@ -91,7 +102,7 @@ public class Tank {
     public void fire() {
         int bx = this.x + 2 * ResourceMgr.bulletD.getWidth() - ResourceMgr.bulletD.getWidth() / 2;
         int by = this.y + 2 * ResourceMgr.bulletD.getHeight() - ResourceMgr.bulletD.getHeight() / 2;
-        tf.bulltes.add(new Bullte(bx, by, dir, tf));
+        tf.bulltes.add(new Bullte(bx, by, dir, tf, group));
     }
 
     public boolean isMoving() {
@@ -126,8 +137,15 @@ public class Tank {
         this.dir = dir;
     }
 
-
     public void die() {
         living = false;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }

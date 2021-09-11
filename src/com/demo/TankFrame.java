@@ -18,7 +18,7 @@ public class TankFrame extends Frame {
     public static final int FRAME_WIDTH = 1080;
     public static final int FRAME_HIGHT = 960;
 
-    Tank mytank = new Tank(200, 400, Direction.UP, this);//主坦克
+    Tank mytank = new Tank(200, 400, Direction.UP, this,Group.GOOD);//主坦克
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表
     public List<Tank> enemies = new ArrayList<>();//敌人坦克列表
 

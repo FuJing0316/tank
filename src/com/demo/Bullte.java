@@ -20,11 +20,14 @@ public class Bullte {
     private static  final int BULLET_WIDTH = ResourceMgr.bulletD.getWidth();
     private static  final int BULLET_HEIGHT = ResourceMgr.bulletD.getHeight();
 
-    public Bullte(int x, int y, Direction dir,TankFrame tf) {
+    private Group group = Group.BAD;
+
+    public Bullte(int x, int y, Direction dir,TankFrame tf,Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tf = tf;
+        this.group = group;
     }
 
     /**
@@ -82,10 +85,11 @@ public class Bullte {
     }
 
     /**
-     * 检测子弹与坦克之间的碰撞
+     * 检测子弹与坦克之间的碰撞(子弹是否打中坦克)
      * 有碰撞则：子弹死坦克死
      */
     public void collectDieWith(Tank tank){
+        if (this.group == tank.getGroup())return;
         Rectangle rectangle1 = new Rectangle(this.x,this.y,BULLET_WIDTH,BULLET_HEIGHT);
         Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(),Tank.TANK_WIDTH,Tank.TANK_HEIGHT);
         //检测子弹和坦克之间的碰撞(交集)
