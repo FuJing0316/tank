@@ -18,9 +18,9 @@ public class TankFrame extends Frame {
     public static final int FRAME_WIDTH = 1080;
     public static final int FRAME_HIGHT = 960;
 
-    Tank mytank = new Tank(300, 200, Direction.DOWN, this);
+    Tank mytank = new Tank(200, 400, Direction.UP, this);//主坦克
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表
-    public List<Tank> tanks = new ArrayList<>();//坦克列表
+    public List<Tank> enemies = new ArrayList<>();//敌人坦克列表
 
     public TankFrame() {
         setSize(FRAME_WIDTH, FRAME_HIGHT);
@@ -67,7 +67,7 @@ public class TankFrame extends Frame {
         Color color = g.getColor();
         g.setColor(Color.WHITE);
         g.drawString("子弹的数量：" + bulltes.size(), 60, 60);
-        g.drawString("敌人的数量：" + tanks.size(), 60, 80);
+        g.drawString("敌人的数量：" + enemies.size(), 60, 80);
         g.setColor(color);
 
         mytank.paint(g);//主坦克
@@ -77,14 +77,14 @@ public class TankFrame extends Frame {
             bulltes.get(i).paint(g);
         }
         //敌人坦克
-        for (int i = 0; i < tanks.size(); i++) {
-            tanks.get(i).paint(g);
+        for (int i = 0; i < enemies.size(); i++) {
+            enemies.get(i).paint(g);
         }
 
         //检测子弹是否击中坦克:每颗子弹每一辆坦克都检查
         for (int i = 0; i < bulltes.size(); i++) {
-            for (int j = 0; j < tanks.size(); j++) {
-                bulltes.get(i).collectDieWith(tanks.get(j));
+            for (int j = 0; j < enemies.size(); j++) {
+                bulltes.get(i).collectDieWith(enemies.get(j));
             }
         }
     }

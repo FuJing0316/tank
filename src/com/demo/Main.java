@@ -6,7 +6,7 @@ public class Main {
         TankFrame tf = new TankFrame();
 
         for (int i = 0; i < 5; i++) {
-            tf.tanks.add(new Tank(50 + i * 100, 200, Direction.DOWN, tf));
+            tf.enemies.add(new Tank(50 + i * 100, 200, Direction.DOWN, tf));
         }
 
         //实现自动移动：睡50毫秒，坐标位置改变

@@ -13,7 +13,7 @@ public class Tank {
     private int x,y;
     //移动方向
     Direction dir;
-    //每一次按键的位移大小（也就是速度）
+    //坦克移动速度（每次按键位移）
     private static final int SPEED = 2;
     //是否移动属性:初始状态是静止的
     private boolean isMoving = false;
@@ -36,12 +36,12 @@ public class Tank {
 
     /**
      * 绘制坦克的方法，在tf.paint中调用
-     * 1、如果坦克被子弹击中，则坦克死,则在窗体坦克列表中药被移除
+     * 1、如果坦克被子弹击中，则坦克死(死掉的坦克应及时从list移除，否则会导致堆内存泄漏)
      * @param g
      */
     public void paint(Graphics g) {
         if (!living){
-            tf.tanks.remove(this);
+            tf.enemies.remove(this);
         }
 
         //坦克使用resourceMgr加载的图片
