@@ -17,7 +17,7 @@ public class Tank {
     //坦克移动速度（每次按键位移）
     private static final int SPEED = 2;
     //是否移动属性:初始状态是静止的
-    private boolean isMoving = false;
+    private boolean moving = false;
 
     //按下control键，坦克要开火，则必须要持有一个TankFrame引用，通过tankframe把坦克射击的子弹传递给窗口，画出来
     private TankFrame tf;
@@ -67,7 +67,7 @@ public class Tank {
     }
 
     private void move() {
-        if (!isMoving) return;
+        if (!moving) return;
 
         switch (dir) {
             case LEFT:
@@ -96,11 +96,11 @@ public class Tank {
     }
 
     public boolean isMoving() {
-        return isMoving;
+        return moving;
     }
 
     public void setMoving(boolean moving) {
-        isMoving = moving;
+        this.moving = moving;
     }
 
     public int getX() {
