@@ -9,7 +9,6 @@ import java.awt.*;
  * @Version: 1.0
  */
 public class Tank {
-    //新加一行注释 by master
     //坦克位置坐标
     private int x,y;
     //移动方向
