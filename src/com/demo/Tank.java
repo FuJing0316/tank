@@ -10,11 +10,11 @@ import java.util.Random;
  * @Version: 1.0
  */
 public class Tank {
-    //坦克位置坐标
-    private int x,y;
-    //移动方向
+    //位置坐标
+    private int x, y;
+    //方向
     Direction dir;
-    //坦克移动速度（每次按键位移）
+    //速度（每次按键位移）
     private static final int SPEED = 2;
     //静止/移动
     private boolean moving = true;
@@ -33,7 +33,7 @@ public class Tank {
     private Random random = new Random();
 
 
-    public Tank(int x, int y, Direction dir, TankFrame tf,Group group) {
+    public Tank(int x, int y, Direction dir, TankFrame tf, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -44,10 +44,11 @@ public class Tank {
     /**
      * 绘制坦克的方法，在tf.paint中调用
      * 1、如果坦克被子弹击中，则坦克死(死掉的坦克应及时从list移除，否则会导致堆内存泄漏)
+     *
      * @param g
      */
     public void paint(Graphics g) {
-        if (!living){
+        if (!living) {
             tf.enemies.remove(this);
         }
 
@@ -90,7 +91,8 @@ public class Tank {
                 break;
         }
 
-        if (random.nextInt(10) > 8) {
+        //敌人坦克随机开火
+        if (this.group == group.BAD && random.nextInt(10) > 8) {
             this.fire();
         }
     }

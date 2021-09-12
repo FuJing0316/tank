@@ -15,13 +15,13 @@ import java.util.List;
  * @Version: 1.0
  */
 public class TankFrame extends Frame {
-    public static final int FRAME_WIDTH = 1080;
-    public static final int FRAME_HIGHT = 960;
+
+    public static final int FRAME_WIDTH = 1080, FRAME_HIGHT = 960;
 
     Tank mytank = new Tank(200, 400, Direction.UP, this, Group.GOOD);//主坦克
     public List<Bullte> bulltes = new ArrayList<>();//子弹列表
     public List<Tank> enemies = new ArrayList<>();//敌人坦克列表
-    public Explod explod = new Explod(90, 100, this);
+    public List<Explod> explods = new ArrayList<>();//坦克被击中产生的爆炸列表
 
     public TankFrame() {
         setSize(FRAME_WIDTH, FRAME_HIGHT);
@@ -89,8 +89,10 @@ public class TankFrame extends Frame {
             }
         }
 
-        //指定位置产生一次爆炸效果
-        explod.paint(g);
+        //画每一次的爆炸
+        for (int i = 0; i < explods.size(); i++) {
+            explods.get(i).paint(g);
+        }
 
     }
 

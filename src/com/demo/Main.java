@@ -12,7 +12,7 @@ public class Main {
 
         //实现自动移动：睡50毫秒，坐标位置改变
         while (true){
-            Thread.sleep(50);
+            Thread.sleep(25);
             tf.repaint();//会自动调用component.paint(tf.paint)方法重画窗口
         }
     }

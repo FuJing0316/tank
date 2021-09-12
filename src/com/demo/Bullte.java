@@ -97,6 +97,7 @@ public class Bullte {
         if (rectangle1.intersects(rectangle2)) {
             tank.die();
             this.die();
+            tf.explods.add(new Explod(this.x, this.y, tf));
         }
     }
 

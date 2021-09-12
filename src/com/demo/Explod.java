@@ -24,8 +24,8 @@ public class Explod {
     }
 
     public void paint(Graphics g) {
-        if (step >= ResourceMgr.bufferedImages.length) return;
         g.drawImage(ResourceMgr.bufferedImages[step++], x, y, null);
+        if (step >= ResourceMgr.bufferedImages.length) tf.explods.remove(this);
     }
 
     public int getX() {
