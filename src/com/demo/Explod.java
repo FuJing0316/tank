@@ -10,8 +10,8 @@ import java.awt.image.BufferedImage;
  * @Version: 1.0
  */
 public class Explod {
-    private static final int EXPLOD_WIDTH = ResourceMgr.bufferedImages[0].getWidth();
-    private static final int EXPLOD_HEIGHT = ResourceMgr.bufferedImages[0].getHeight();
+     static final int EXPLOD_WIDTH = ResourceMgr.bufferedImages[0].getWidth();
+     static final int EXPLOD_HEIGHT = ResourceMgr.bufferedImages[0].getHeight();
 
     private int x, y;
     private TankFrame tf;

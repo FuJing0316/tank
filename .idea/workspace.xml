@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Bullte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Explod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Explod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -137,7 +139,7 @@
       <workItem from="1631104555392" duration="2915000" />
       <workItem from="1631183270565" duration="3289000" />
       <workItem from="1631325069953" duration="3047000" />
-      <workItem from="1631413431313" duration="6551000" />
+      <workItem from="1631413431313" duration="7110000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -307,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631428270684</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="敌人坦克随机移动">
+      <created>1631440763149</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1631440763149</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +360,8 @@
     <MESSAGE value="1、敌人坦克随机发射子弹；2、区分敌我，默认不开启队友伤害" />
     <MESSAGE value="添加一次爆炸效果" />
     <MESSAGE value="做了一些美化修改，坦克图片替换，并由一张旋转完成，爆炸在击中位置实现，适时清理爆炸列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="做了一些美化修改，坦克图片替换，并由一张旋转完成，爆炸在击中位置实现，适时清理爆炸列表" />
+    <MESSAGE value="敌人坦克随机移动" />
+    <option name="LAST_COMMIT_MESSAGE" value="敌人坦克随机移动" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

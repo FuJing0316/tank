@@ -106,8 +106,8 @@ public class Tank {
      * 1、确定子弹发射出的位置，子弹方向
      */
     public void fire() {
-        int bx = this.x + ResourceMgr.tankU.getWidth()/2;
-        int by = this.y + ResourceMgr.tankU.getHeight()/2;
+        int bx = this.x + ResourceMgr.tankU.getWidth() / 2;
+        int by = this.y + ResourceMgr.tankU.getHeight() / 2;
         tf.bulltes.add(new Bullte(bx, by, dir, tf, group));
     }
 
