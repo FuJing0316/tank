@@ -27,8 +27,8 @@ public class Tank {
     //所在队伍：敌我方区分
     private Group group = Group.BAD;
 
-    public static int TANK_WIDTH = ResourceMgr.tankD.getWidth();
-    public static int TANK_HEIGHT = ResourceMgr.tankD.getHeight();
+    public static int TANK_WIDTH = ResourceMgr.goodTankU.getWidth();
+    public static int TANK_HEIGHT = ResourceMgr.goodTankU.getHeight();
 
     private Random random = new Random();
 
@@ -55,16 +55,16 @@ public class Tank {
         //坦克使用resourceMgr加载的图片
         switch (dir) {
             case LEFT:
-                g.drawImage(ResourceMgr.tankL, x, y, null);
+                g.drawImage(this.group == Group.GOOD ? ResourceMgr.goodTankL : ResourceMgr.badTankL, x, y, null);
                 break;
             case UP:
-                g.drawImage(ResourceMgr.tankU, x, y, null);
+                g.drawImage(this.group == Group.GOOD ? ResourceMgr.goodTankU : ResourceMgr.badTankU, x, y, null);
                 break;
             case RIGHT:
-                g.drawImage(ResourceMgr.tankR, x, y, null);
+                g.drawImage(this.group == Group.GOOD ? ResourceMgr.goodTankR : ResourceMgr.badTankR, x, y, null);
                 break;
             case DOWN:
-                g.drawImage(ResourceMgr.tankD, x, y, null);
+                g.drawImage(this.group == Group.GOOD ? ResourceMgr.goodTankD : ResourceMgr.badTankD, x, y, null);
                 break;
             default:
                 break;
@@ -106,8 +106,8 @@ public class Tank {
      * 1、确定子弹发射出的位置，子弹方向
      */
     public void fire() {
-        int bx = this.x + ResourceMgr.tankU.getWidth() / 2;
-        int by = this.y + ResourceMgr.tankU.getHeight() / 2;
+        int bx = this.x + ResourceMgr.goodTankU.getWidth() / 2;
+        int by = this.y + ResourceMgr.goodTankU.getHeight() / 2;
         tf.bulltes.add(new Bullte(bx, by, dir, tf, group));
     }
 

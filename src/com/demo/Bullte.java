@@ -99,7 +99,7 @@ public class Bullte {
             this.die();
 
             int ex = tank.getX() + Tank.TANK_WIDTH / 2 - Explod.EXPLOD_WIDTH / 2;
-            int ey = tank.getX() + Tank.TANK_HEIGHT / 2 - Explod.EXPLOD_HEIGHT / 2;
+            int ey = tank.getY() + Tank.TANK_HEIGHT / 2 - Explod.EXPLOD_HEIGHT / 2;
             tf.explods.add(new Explod(ex, ey, tf));
         }
     }
