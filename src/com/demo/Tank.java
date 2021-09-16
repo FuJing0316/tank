@@ -92,9 +92,24 @@ public class Tank {
         }
 
         //敌人坦克随机开火
-        if (this.group == group.BAD && random.nextInt(100) > 95) this.fire();
+        if (this.group == group.BAD && random.nextInt(100) > 95) fire();
         //敌人坦克移动方向随机
-        if (this.group == group.BAD && random.nextInt(100) > 95) this.randomDir();
+        if (this.group == group.BAD && random.nextInt(100) > 95) randomDir();
+
+        //边界检测，避免坦克开出游戏窗口
+        boundarycheck();
+
+    }
+
+    private void boundarycheck() {
+        if (this.x < 2) x = 2;
+        if (this.y < 2) y = 2;
+        if (this.x > TankFrame.FRAME_WIDTH - Tank.TANK_WIDTH - 2) {
+            this.x = TankFrame.FRAME_WIDTH - Tank.TANK_WIDTH - 2;
+        }
+        if (this.y > TankFrame.FRAME_HIGHT - Tank.TANK_HEIGHT - 2) {
+            this.y = TankFrame.FRAME_HIGHT - Tank.TANK_HEIGHT - 2;
+        }
     }
 
     private void randomDir() {
