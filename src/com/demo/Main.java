@@ -5,8 +5,10 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         TankFrame tf = new TankFrame();
 
+        int badTankCount = Integer.valueOf((String) PropertyMgr.get("badTankCount"));
+
         //初始化敌方坦克
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < badTankCount; i++) {
             tf.enemies.add(new Tank(50 + i * 100, 200, Direction.DOWN, tf,Group.BAD));
         }
 

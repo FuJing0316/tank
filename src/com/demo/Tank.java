@@ -105,7 +105,7 @@ public class Tank {
         //边界检测，避免坦克开出游戏窗口
         boundarycheck();
 
-        //update tankRect
+        //update tankRect:随动更新位置
         tankRect.x = x;
         tankRect.y = y;
 
