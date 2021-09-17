@@ -12,7 +12,7 @@ public class Bullte {
     private int x, y;
     Direction dir;
     //位移大小（也就是移动速度）
-    private static final int SPEED = 6;
+    private static final int SPEED = 7;
 
     private TankFrame tf;
     private boolean living = true;
@@ -22,12 +22,19 @@ public class Bullte {
 
     private Group group = Group.BAD;
 
+    Rectangle bulletRect = new Rectangle();
+
     public Bullte(int x, int y, Direction dir, TankFrame tf, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tf = tf;
         this.group = group;
+
+        this.bulletRect.x = this.x;
+        this.bulletRect.y = this.y;
+        this.bulletRect.width = BULLET_WIDTH;
+        this.bulletRect.height = BULLET_HEIGHT;
     }
 
     /**
@@ -83,6 +90,10 @@ public class Bullte {
         if (x < 0 || y < 0 || x > TankFrame.FRAME_WIDTH || y > TankFrame.FRAME_HIGHT) {
             living = false;
         }
+
+        //update bulletRect
+        bulletRect.x = x;
+        bulletRect.y = y;
     }
 
     /**
@@ -91,10 +102,9 @@ public class Bullte {
      */
     public void collectDieWith(Tank tank) {
         if (this.group == tank.getGroup()) return;
-        Rectangle rectangle1 = new Rectangle(this.x, this.y, BULLET_WIDTH, BULLET_HEIGHT);
-        Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), Tank.TANK_WIDTH, Tank.TANK_HEIGHT);
+
         //检测子弹和坦克之间的碰撞(交集)
-        if (rectangle1.intersects(rectangle2)) {
+        if (bulletRect.intersects(tank.tankRect)) {
             tank.die();
             this.die();
 

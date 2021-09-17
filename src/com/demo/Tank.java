@@ -15,7 +15,7 @@ public class Tank {
     //方向
     Direction dir;
     //速度（每次按键位移）
-    private static final int SPEED = 2;
+    private static final int SPEED = 3;
     //静止/移动
     private boolean moving = true;
 
@@ -31,6 +31,7 @@ public class Tank {
     public static int TANK_HEIGHT = ResourceMgr.goodTankU.getHeight();
 
     private Random random = new Random();
+    Rectangle tankRect = new Rectangle();
 
 
     public Tank(int x, int y, Direction dir, TankFrame tf, Group group) {
@@ -39,6 +40,11 @@ public class Tank {
         this.dir = dir;
         this.tf = tf;
         this.group = group;
+
+        this.tankRect.x = this.x;
+        this.tankRect.y = this.y;
+        this.tankRect.width = TANK_WIDTH;
+        this.tankRect.height = TANK_HEIGHT;
     }
 
     /**
@@ -99,11 +105,15 @@ public class Tank {
         //边界检测，避免坦克开出游戏窗口
         boundarycheck();
 
+        //update tankRect
+        tankRect.x = x;
+        tankRect.y = y;
+
     }
 
     private void boundarycheck() {
         if (this.x < 2) x = 2;
-        if (this.y < 2) y = 2;
+        if (this.y < 30) y = 30;
         if (this.x > TankFrame.FRAME_WIDTH - Tank.TANK_WIDTH - 2) {
             this.x = TankFrame.FRAME_WIDTH - Tank.TANK_WIDTH - 2;
         }
