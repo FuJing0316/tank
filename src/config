@@ -1,2 +1,5 @@
 #init tankcount
 badTankCount=10
+badTankCount=8
+tankSpeed=3
+bulletSpeed=10

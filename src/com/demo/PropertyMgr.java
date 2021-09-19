@@ -21,11 +21,11 @@ public class PropertyMgr {
         }
     }
 
-    public static Object get(String key) {
+    public static String get(String key) {
         if (properties == null) {
             return null;
         }
-        return properties.get(key);
+        return (String) properties.get(key);
     }
 
     public static void main(String[] args) {

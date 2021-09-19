@@ -15,7 +15,7 @@ public class Tank {
     //方向
     Direction dir;
     //速度（每次按键位移）
-    private static final int SPEED = 3;
+    private static final int SPEED = Integer.parseInt(PropertyMgr.get("tankSpeed"));
     //静止/移动
     private boolean moving = true;
 

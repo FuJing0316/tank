@@ -12,7 +12,7 @@ public class Bullte {
     private int x, y;
     Direction dir;
     //位移大小（也就是移动速度）
-    private static final int SPEED = 7;
+    private static final int SPEED = Integer.parseInt(PropertyMgr.get("bulletSpeed"));
 
     private TankFrame tf;
     private boolean living = true;

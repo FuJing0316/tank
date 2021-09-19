@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         TankFrame tf = new TankFrame();
 
-        int badTankCount = Integer.valueOf((String) PropertyMgr.get("badTankCount"));
+        int badTankCount = Integer.parseInt(PropertyMgr.get("badTankCount"));
 
         //初始化敌方坦克
         for (int i = 0; i < badTankCount; i++) {
