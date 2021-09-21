@@ -10,7 +10,10 @@ import java.io.IOException;
  * @Description: 创建资源管理对象，负责将 Classpath下的图片load到内存
  * @Version: 1.0
  */
-public class ResourceMgr {
+public enum ResourceMgr {
+
+    instance;
+
     public static BufferedImage goodTankL,goodTankU,goodTankR,goodTankD;
     public static BufferedImage badTankL,badTankU,badTankR,badTankD;
     public static BufferedImage bulletL,bulletU,bulletR,bulletD;

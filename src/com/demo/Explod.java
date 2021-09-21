@@ -10,8 +10,8 @@ import java.awt.image.BufferedImage;
  * @Version: 1.0
  */
 public class Explod {
-     static final int EXPLOD_WIDTH = ResourceMgr.bufferedImages[0].getWidth();
-     static final int EXPLOD_HEIGHT = ResourceMgr.bufferedImages[0].getHeight();
+     static final int EXPLOD_WIDTH = ResourceMgr.instance.bufferedImages[0].getWidth();
+     static final int EXPLOD_HEIGHT = ResourceMgr.instance.bufferedImages[0].getHeight();
 
     private int x, y;
     private TankFrame tf;
@@ -24,8 +24,8 @@ public class Explod {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(ResourceMgr.bufferedImages[step++], x, y, null);
-        if (step >= ResourceMgr.bufferedImages.length) tf.explods.remove(this);
+        g.drawImage(ResourceMgr.instance.bufferedImages[step++], x, y, null);
+        if (step >= ResourceMgr.instance.bufferedImages.length) tf.explods.remove(this);
     }
 
     public int getX() {

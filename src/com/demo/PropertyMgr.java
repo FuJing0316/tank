@@ -9,7 +9,8 @@ import java.util.Properties;
  * @Description: 读取配置文件的配置数据
  * @Version: 1.0
  */
-public class PropertyMgr {
+public enum PropertyMgr {
+    instance;
 
     static Properties properties = new Properties();
 
