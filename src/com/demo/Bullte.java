@@ -35,6 +35,8 @@ public class Bullte {
         this.bulletRect.y = this.y;
         this.bulletRect.width = BULLET_WIDTH;
         this.bulletRect.height = BULLET_HEIGHT;
+
+        tf.bulltes.add(this);
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Tank {
     //位置坐标
-    private int x, y;
+    int x, y;
     //方向
     Direction dir;
     //速度（每次按键位移）
@@ -20,12 +20,12 @@ public class Tank {
     private boolean moving = true;
 
     //按下control键，坦克要开火，则必须要持有一个TankFrame引用，通过tankframe把坦克射击的子弹传递给窗口，画出来
-    private TankFrame tf;
+    TankFrame tf;
 
     //是否被消灭
     private boolean living = true;
     //所在队伍：敌我方区分
-    private Group group = Group.BAD;
+    Group group = Group.BAD;
 
     public static int TANK_WIDTH = ResourceMgr.goodTankU.getWidth();
     public static int TANK_HEIGHT = ResourceMgr.goodTankU.getHeight();
@@ -33,6 +33,7 @@ public class Tank {
     private Random random = new Random();
     Rectangle tankRect = new Rectangle();
 
+    fireStategy fireStategy;
 
     public Tank(int x, int y, Direction dir, TankFrame tf, Group group) {
         this.x = x;
@@ -45,6 +46,9 @@ public class Tank {
         this.tankRect.y = this.y;
         this.tankRect.width = TANK_WIDTH;
         this.tankRect.height = TANK_HEIGHT;
+
+        if (this.group ==Group.GOOD) fireStategy = new FourFireStrategy();
+        else fireStategy = new DefaultFireStrategy();
     }
 
     /**
@@ -97,9 +101,9 @@ public class Tank {
                 break;
         }
 
-        //敌人坦克随机开火
+        //随机开火
         if (this.group == group.BAD && random.nextInt(100) > 95) fire();
-        //敌人坦克移动方向随机
+        //随机移动
         if (this.group == group.BAD && random.nextInt(100) > 95) randomDir();
 
         //边界检测，避免坦克开出游戏窗口
@@ -131,9 +135,7 @@ public class Tank {
      * 1、确定子弹发射出的位置，子弹方向
      */
     public void fire() {
-        int bx = this.x + ResourceMgr.goodTankU.getWidth() / 2;
-        int by = this.y + ResourceMgr.goodTankU.getHeight() / 2;
-        tf.bulltes.add(new Bullte(bx, by, dir, tf, group));
+        fireStategy.fire(this);
     }
 
     public boolean isMoving() {

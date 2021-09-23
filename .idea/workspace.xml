@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/demo/DefaultFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/demo/FourFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/demo/fireStategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/demo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/Explod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Explod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/PropertyMgr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/demo/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/ResourceMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/Bullte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,21 +42,21 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="test" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.demo" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\D\my_codespace\tank\src" />
@@ -77,7 +77,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.Main" />
-      <module name="tank" />
+      <module name="tank_dp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.*" />
@@ -90,7 +90,7 @@
     </configuration>
     <configuration name="PropertyMgr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.PropertyMgr" />
-      <module name="tank" />
+      <module name="tank_dp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.*" />
@@ -102,7 +102,7 @@
       </method>
     </configuration>
     <configuration name="ImageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tank" />
+      <module name="tank_dp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -161,7 +161,9 @@
       <workItem from="1631616126268" duration="1206000" />
       <workItem from="1631786980178" duration="2810000" />
       <workItem from="1631880403595" duration="6183000" />
-      <workItem from="1632022011019" duration="6540000" />
+      <workItem from="1632022011019" duration="9838000" />
+      <workItem from="1632311209033" duration="344000" />
+      <workItem from="1632396701401" duration="3468000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -380,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632024988658</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="属性管理器、资源管理器改为单例模式">
+      <created>1632206347276</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1632206347276</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,8 +412,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/tank" />
     </ignored-roots>
-    <MESSAGE value="1、添加键盘处理，根据上下左右的按键状态，判定坦克的移动方向；&#10;2、定义坦克方向enum,根据按键状态设置坦克方向，根据坦克方向确定坦克位移变化（速度变化）" />
-    <MESSAGE value="抽象出了坦克类，封账对应的属性，在tankeframe中直接调用" />
     <MESSAGE value="添加坦克的静止属性，当按键不是上下左右键时，坦克设置为静止状态" />
     <MESSAGE value="定义子弹类，封装属性，并在窗口画出来" />
     <MESSAGE value="处理缓冲，解决闪烁问题" />
@@ -428,6 +435,8 @@
     <MESSAGE value="finish first milestone version" />
     <MESSAGE value="增加配置文件，让程序更加灵活" />
     <MESSAGE value="优化配置文件的使用，first milestone version" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化配置文件的使用，first milestone version" />
+    <MESSAGE value="属性管理器、资源管理器定义为单例模式" />
+    <MESSAGE value="属性管理器、资源管理器改为单例模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="属性管理器、资源管理器改为单例模式" />
   </component>
 </project>
