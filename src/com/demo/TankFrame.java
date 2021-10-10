@@ -5,6 +5,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -123,6 +124,12 @@ public class TankFrame extends Frame {
                 case KeyEvent.VK_CONTROL:
                     mytank.fire();
                     break;
+                case KeyEvent.VK_S:
+                    save();
+                    break;
+                case KeyEvent.VK_L:
+                    load();
+                    break;
                 default:
                     break;
             }
@@ -169,6 +176,56 @@ public class TankFrame extends Frame {
             if (bU) mytank.setDir(Direction.UP);
             if (bR) mytank.setDir(Direction.RIGHT);
             if (bD) mytank.setDir(Direction.DOWN);
+        }
+
+
+        /**
+         * memento模式练习 - 坦克存盘 - 保存坦克状态
+         */
+        public void save() {
+            File f = new File("C:/D/tank.data");
+            ObjectOutputStream ops = null;
+            try {
+                ops = new ObjectOutputStream(new FileOutputStream(f));
+                ops.writeObject(mytank);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (ops != null) {
+                    try {
+                        ops.flush();
+                        ops.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        /**
+         * memento模式练习 - 坦克存盘 - load回来存盘时状态
+         */
+        public void load() {
+            File f = new File("C:/D/tank.data");
+            ObjectInputStream ips = null;
+            try {
+                ips = new ObjectInputStream(new FileInputStream(f));
+                try {
+                    mytank = (Tank) ips.readObject();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (ips != null) {
+                    try {
+                        ips.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
 
     }

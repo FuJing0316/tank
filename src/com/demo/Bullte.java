@@ -1,6 +1,7 @@
 package com.demo;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * @Author: fujing
@@ -8,7 +9,7 @@ import java.awt.*;
  * @Description: 子弹对象
  * @Version: 1.0
  */
-public class Bullte {
+public class Bullte implements Serializable {
     private int x, y;
     Direction dir;
     //位移大小（也就是移动速度）

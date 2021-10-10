@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a6b8e8-7513-411a-8124-31fa7fd9c632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/demo/DefaultFireStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/demo/FourFireStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/demo/fireStategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/Bullte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Bullte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/DefaultFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/FourFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/FourFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/demo/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/demo/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/demo/TankFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,32 +102,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tank_dp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.ImageTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.PropertyMgr" />
-      <item itemvalue="JUnit.ImageTest.test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.PropertyMgr" />
-        <item itemvalue="JUnit.ImageTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +147,8 @@
       <workItem from="1632022011019" duration="9838000" />
       <workItem from="1632311209033" duration="344000" />
       <workItem from="1632396701401" duration="3468000" />
+      <workItem from="1632408391222" duration="764000" />
+      <workItem from="1633617520053" duration="6392000" />
     </task>
     <task id="LOCAL-00001" summary="dele 多余impl">
       <created>1629631373960</created>
@@ -389,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632206347276</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="坦克开火，使用策略模式">
+      <created>1632408461049</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1632408461049</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +404,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/tank" />
     </ignored-roots>
-    <MESSAGE value="添加坦克的静止属性，当按键不是上下左右键时，坦克设置为静止状态" />
     <MESSAGE value="定义子弹类，封装属性，并在窗口画出来" />
     <MESSAGE value="处理缓冲，解决闪烁问题" />
     <MESSAGE value="按下ctrl键，坦克会fire出一颗子弹，则坦克必须持有tankframe的引用，把子弹传递给窗口画出来" />
@@ -437,6 +428,7 @@
     <MESSAGE value="优化配置文件的使用，first milestone version" />
     <MESSAGE value="属性管理器、资源管理器定义为单例模式" />
     <MESSAGE value="属性管理器、资源管理器改为单例模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="属性管理器、资源管理器改为单例模式" />
+    <MESSAGE value="坦克开火，使用策略模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="坦克开火，使用策略模式" />
   </component>
 </project>

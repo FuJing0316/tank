@@ -1,6 +1,7 @@
 package com.demo;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Random;
  * @Description: 抽象出坦克对象
  * @Version: 1.0
  */
-public class Tank {
+public class Tank implements Serializable {
     //位置坐标
     int x, y;
     //方向

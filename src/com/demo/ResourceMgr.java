@@ -3,6 +3,7 @@ package com.demo;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * @Author: fujing
@@ -10,7 +11,7 @@ import java.io.IOException;
  * @Description: 创建资源管理对象，负责将 Classpath下的图片load到内存
  * @Version: 1.0
  */
-public enum ResourceMgr {
+public enum ResourceMgr implements Serializable {
 
     instance;
 
